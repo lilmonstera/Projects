@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Reflections — A Gentle Journaling Space</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Nunito+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <!-- Prompt screen -->
+      <section id="prompt-screen" class="card" aria-live="polite">
+        <p class="eyebrow">Today's reflection</p>
+        <h1 id="prompt-text" class="prompt-text"></h1>
+
+        <textarea
+          id="journal-input"
+          class="journal-input"
+          placeholder="There's no wrong way to do this. Write as little or as much as feels right…"
+          aria-label="Journal entry"
+        ></textarea>
+
+        <div class="actions">
+          <button id="complete-btn" class="btn btn-primary">Complete</button>
+          <button id="skip-btn" class="btn btn-link">Not today — that's okay</button>
+        </div>
+
+        <p class="footnote">
+          If this brings something heavy to the surface, go gently — talking
+          to someone you trust or a mental health professional can help too.
+        </p>
+      </section>
+
+      <!-- Affirmation screen -->
+      <section id="affirmation-screen" class="card hidden" aria-live="polite">
+        <p class="eyebrow">Your reminder for today</p>
+        <p id="affirmation-text" class="affirmation-text"></p>
+        <p class="closing-message">
+          Thank you for taking this time for yourself. Carry this with you,
+          and come back tomorrow whenever you're ready.
+        </p>
+        <button id="done-btn" class="btn btn-secondary">Close for now</button>
+      </section>
+    </main>
+
+    <script src="./content.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
