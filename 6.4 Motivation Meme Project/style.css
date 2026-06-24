@@ -1,0 +1,19 @@
+* { 
+    background: black;
+    color: white;
+}
+
+img {
+    border: 5px solid white;
+    width:100%;
+}
+
+text {
+    text-align: center;
+    font size: 30px;
+}
+
+.container {
+    width:50%;
+    margin-left: 25%;
+}

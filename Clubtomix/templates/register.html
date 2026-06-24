@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="form-card">
+    <h2>Create a Clubtomix account</h2>
+    <form method="post">
+    <input name="first_name" placeholder="First name" required>
+    <input name="last_name" placeholder="Last name" required>
+    <input name="email" type="email" placeholder="Email address" required>
+    <input name="phone" placeholder="Cellphone number" required>
+
+    <input name="username" placeholder="Username" required>
+    <input name="password" type="password" placeholder="Password" required>
+    <input name="confirmation" type="password" placeholder="Confirm password" required>
+
+        <button>Register</button>
+    </form>
+</div>
+
+{% endblock %}
+

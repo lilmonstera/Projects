@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Dashboard Navigation -->
+<nav class="nav-dashboard">
+    <div class="nav-logo">Clubtomix</div>
+    <a href="/logout" class="nav-btn">Logout</a>
+</nav>
+
+<!-- Dashboard Content -->
+<div class="dashboard">
+
+    <!-- Bookings -->
+    <h2>Your Bookings</h2>
+
+    {% if bookings %}
+    <ul>
+        {% for b in bookings %}
+        <li>
+            <div>
+                <strong>{{ b.course_name }}</strong><br>
+                <span>{{ b.time }}</span>
+            </div>
+            <a href="/cancel/{{ b.id }}">Cancel</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p> You do not have any tee times booked.</p>
+    {% endif %}
+
+    <!-- Booking form -->
+    <h3 style="margin-top:40px;">Book a Course</h3>
+
+    <form method="post" action="/book" class="form-card">
+        <input name="name" placeholder="Your name" required>
+
+        <select name="course_id" required>
+            <option disabled selected>Select a course</option>
+            {% for c in courses %}
+            <option value="{{ c.id }}">{{ c.name }}</option>
+            {% endfor %}
+        </select>
+
+        <input name="time" placeholder="Preferred time (e.g. 10:00 AM)" required>
+        <input name="email" placeholder="Email Address" required>
+        <input name="number" placeholder="Cellphone number">
+
+        <button type="submit">Book Tee Time</button>
+    </form>
+
+</div>
+
+<section class="footer">
+    <img src="{{ url_for('static', filename='images/logo.png') }}">
+    <a href="/login"> Login </a>
+    <a href="/register"> Register </a>
+    <p> Brought to you by Lorena De Barros Gouws | CS50 Final Project </p>
+</section>
+
+{% endblock %}

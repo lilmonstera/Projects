@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<nav class="nav">
+    <div class="nav-logo">Clubtomix</div>
+    <div class="nav-links">
+        <a href="/login">Log in</a>
+        <a href="/register">Sign up</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-overlay">
+        <h1>Clubtomix</h1>
+        <div class="hero-buttons">
+            <a href="/login" class="btn-primary">Book a tee time</a>
+            <a href="/dashboard" class="btn-primary">View my tee time</a>
+        </div>
+    </div>
+</section>
+
+<section class="feature-card">
+    <img src="{{ url_for('static', filename='images/Dashboard_img.jpeg') }}">
+</section>
+
+    <section class="info">
+    <div class="info-container">
+        <div class="info-text">
+            <h2>Golf your way</h2>
+            <p>Welcome to your "Whole-in-one" app that helps you manage and book golf your way. </p>
+
+            <h3> Features </h3>
+            <ul>
+                <li> User registration and authentication </li>
+                <li> A simple Dashboard provided for logged-in users </li>
+                <li> Keep track of booked tee times at featured golf courses </li>
+                <li> Cancellation feature </li>
+            </ul>
+            <h3> Future Features </h3>
+            <ul>
+                <li> Payment integration for booking tee times </li>
+                <li> Golf course memberships and subscription management </li>
+                <li> Social features to see who you are playing with </li>
+                <li> Ability to invite friends to join a booking </li>
+                <li> Score tracking per round </li>
+                <li> Handicap calculation and progress tracking </li>
+            </ul>
+        </div>
+
+        <div class="info-image">
+            <img src="/static/images/download.jfif" alt="Golf course">
+        </div>
+    </div>
+</section>
+
+<section class="image-grid">
+    <img src="{{ url_for('static', filename='images/golf1.jpeg') }}">
+    <img src="{{ url_for('static', filename='images/golf2.jpeg') }}">
+    <img src="{{ url_for('static', filename='images/golf3.jpeg') }}">
+    <img src="{{ url_for('static', filename='images/golf4.jpeg')}}">
+</section>
+
+
+<section class="footer">
+    <img src="{{ url_for('static', filename='images/logo.png') }}">
+    <a href="/login"> Login </a>
+    <a href="/register"> Register </a>
+    <p> Brought to you by Lorena De Barros Gouws | CS50 Final Project </p>
+</section>
+
+{% endblock %}
